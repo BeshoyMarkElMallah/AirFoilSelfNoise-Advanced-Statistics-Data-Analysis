@@ -10,7 +10,7 @@ f= data['f']
 alpha = data['alpha']
 c = data['c']
 u_infinity = data['U_infinity']
-delta = data['data']
+delta = data['delta']
 sspl = data['SSPL']
 
 # Turn them into numpy arrays
