@@ -48,7 +48,32 @@ u_infinity_mode = u_infinity.mode()
 delta_mode = delta.mode()
 sspl_mode = sspl.mode()
 
+'''
+4-1 Correlation Coefficient
+'''
+# correlation coeffiction between f, sspl
+corr_coefficient = f.corr(sspl)
+print("The Correlation Coefficient of the f and sspl are: ",corr_coefficient)
 
+# correlation coeffiction between alpha, sspl
+corr_coefficient= alpha.corr(sspl)
+print("The Correlation Coefficient of the alpha and sspl are: ",corr_coefficient)
+
+# correlation coeffiction between c, sspl
+corr_coefficient = c.corr(sspl)
+print("The Correlation Coefficient of the c and sspl are: ",corr_coefficient)
+
+# correlation coeffiction between u_infinity, sspl
+corr_coefficient = u_infinity.corr(sspl)
+print("The Correlation Coefficient of the u_infinity and sspl are: ",corr_coefficient)
+
+# correlation coeffiction between delta, sspl
+corr_coefficient = delta.corr(sspl)
+print("The Correlation Coefficient of the delta and sspl are: ",corr_coefficient)
+
+'''
+End 4-1 Correlation Coefficient
+'''
 
 '''
 4-2 Correlation Coefficient
