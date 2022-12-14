@@ -273,7 +273,7 @@ plt.title('Correlation between f & sspl')
 #plotting the data
 plt.scatter(f, sspl)
  
-# This will fit the best line into the graph
+# This will fit the best line into the graph (linear regression)
 plt.plot(np.unique(f), np.poly1d(np.polyfit(f, sspl, 1))
          (np.unique(f)), color='red')
  
@@ -291,7 +291,7 @@ plt.title('Correlation between alpha & sspl')
 #plotting the data
 plt.scatter(alpha, sspl)
  
-# This will fit the best line into the graph
+# This will fit the best line into the graph (linear regression)
 plt.plot(np.unique(alpha), np.poly1d(np.polyfit( alpha, sspl, 1))
          (np.unique(alpha)), color='green')
 
@@ -309,7 +309,7 @@ plt.title('Correlation between c & sspl')
 #plotting the dat
 plt.scatter(c, sspl)
  
-# This will fit the best line into the graph
+# This will fit the best line into the graph (linear regression)
 plt.plot(np.unique(c), np.poly1d(np.polyfit(c, sspl, 1))
          (np.unique(c)), color='gray')
 
@@ -327,7 +327,7 @@ plt.title('Correlation between u_infinity  & sspl')
 #plotting the data
 plt.scatter(u_infinity, sspl)
  
-# This will fit the best line into the graph
+# This will fit the best line into the graph  (linear regression)
 plt.plot(np.unique(u_infinity), np.poly1d(np.polyfit(u_infinity, sspl, 1))
          (np.unique(u_infinity)), color='orange')
 
@@ -345,7 +345,7 @@ plt.title('Correlation between delta  & sspl')
 #plotting the data
 plt.scatter(delta, sspl)
  
-# This will fit the best line into the graph
+# This will fit the best line into the graph (linear regression)
 plt.plot(np.unique(delta), np.poly1d(np.polyfit(delta, sspl, 1))
          (np.unique(delta)), color='yellow')
 
