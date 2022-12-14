@@ -50,6 +50,90 @@ sspl_mode = sspl.mode()
 
 
 
+'''
+1-1 Histogram 
+'''
+
+plt.title('Histogram For F ')
+plt.hist(f,bins=10)
+plt.show()
+
+plt.title('Histogram For alpha ')
+plt.hist(alpha,bins=10)
+plt.show()
+
+plt.title('Histogram For C ')
+plt.hist(c,bins=10)
+plt.show()
+
+plt.title('Histogram For u_infinity ')
+plt.hist(u_infinity,bins=10)
+plt.show()
+
+plt.title('Histogram For delta ')
+plt.hist(delta,bins=10)
+plt.show()
+
+plt.title('Histogram For sspl ')
+plt.hist(sspl,bins=10)
+plt.show()
+
+
+'''
+1-2 Density Plot 
+'''
+plt.title('Density Plot For f ')
+f.plot.kde()
+plt.show()
+
+plt.title('Density Plot For alpha ')
+alpha.plot.kde()
+plt.show()
+
+plt.title('Density Plot For c ')
+c.plot.kde()
+plt.show()
+
+plt.title('Density Plot For u_infinity ')
+u_infinity.plot.kde()
+plt.show()
+
+plt.title('Density Plot For delta ')
+delta.plot.kde()
+plt.show()
+
+plt.title('Density Plot For sspl ')
+sspl.plot.kde()
+plt.show()
+
+'''
+1-3 BoxPlot
+'''
+
+plt.title('boxplot Plot For f ')
+plt.boxplot(f, showmeans=True)
+plt.show()
+
+plt.title('boxplot Plot For alpha ')
+plt.boxplot(alpha, showmeans=True)
+plt.show()
+
+plt.title('boxplot Plot For c ')
+plt.boxplot(c, showmeans=True)
+plt.show()
+
+plt.title('boxplot Plot For u_infinity ')
+plt.boxplot(u_infinity, showmeans=True)
+plt.show()
+
+plt.title('boxplot Plot For delta ')
+plt.boxplot(delta, showmeans=True)
+plt.show()
+
+plt.title('boxplot Plot For sspl ')
+plt.boxplot(sspl, showmeans=True)
+plt.show()
+
 
 # Task 3 Dispersion 
 
