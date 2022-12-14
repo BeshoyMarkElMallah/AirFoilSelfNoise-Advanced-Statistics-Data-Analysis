@@ -48,6 +48,107 @@ u_infinity_mode = u_infinity.mode()
 delta_mode = delta.mode()
 sspl_mode = sspl.mode()
 
+
+
+
+# Task 3 Dispersion 
+
+# 1-Dispersion for frequency
+
+# 1) range for frequency
+f_range = f.max()-f.min()
+print(f_range)
+
+# 2) variance for frequency
+f_var = np.var(f_num)
+print(f_var)
+
+# 3) standard deviation for frequency
+f_std = np.std(f_num)
+print(f_std)
+
+# * * * * * * * * * * * * * * * * * * * * * * * #
+
+# 2-Dispersion for alpha
+
+# 1) range for alpha
+alpha_range = alpha.max()-alpha.min()
+print(alpha_range)
+
+# 2) variance for alpha
+alpha_var= np.var(alpha_num)
+print(alpha_var)
+
+# 3) standard deviation for alpha
+alpha_std = np.std(alpha_num)
+print(alpha_std)
+
+# * * * * * * * * * * * * * * * * * * * * * * * #
+
+# 3-Dispersion for c
+
+# 1) range for c
+c_range = c.max()-c.min()
+print(c_range)
+
+# 2) variance for c
+c_var = np.var(c_num)
+print(c_var)
+
+# 3) standard deviation for c
+c_std = np.std(c_num)
+print(c_std)
+
+# * * * * * * * * * * * * * * * * * * * * * * * #
+
+# 4-Dispersion for u_infinity
+
+# 1) range for u_infinity
+u_infinity_range = u_infinity.max()-u_infinity.min()
+print(u_infinity_range)
+
+# 2) variance for u_infinity
+u_infinity_var = np.var(u_infinity_num)
+print(u_infinity_var)
+
+# 3) standard deviation for u_infinity
+u_infinity_std = np.std(u_infinity_num)
+print(u_infinity_std)
+
+# * * * * * * * * * * * * * * * * * * * * * * * #
+
+# 5-Dispersion for delta
+
+# 1) range for delta
+delta_range = delta.max()-delta.min()
+print(delta_range)
+
+# 2) variance for delta
+delta_var = np.var(delta_num)
+print(delta_var)
+
+# 3) standard deviation for delta
+delta_std = np.std(delta_num)
+print(delta_std)
+
+# * * * * * * * * * * * * * * * * * * * * * * * #
+
+# 6-Dispersion for SSPL
+
+# 1) range for SSPL
+sspl_range = sspl.max()-sspl.min()
+print(sspl_range)
+
+# 2) variance for SSPL
+sspl_var = np.var(sspl_num)
+print(sspl_var)
+
+# 3) standard deviation for SSPL
+sspl_std = np.std(sspl_num)
+print(sspl_std)
+
+# * * * * * * * * * * * * * * * * * * * * * * * #
+
 '''
 4-1 Correlation Coefficient
 '''
@@ -175,101 +276,3 @@ End 4-2 Correlation Coefficient
 '''
 
 
-
-# Task 3 Dispersion 
-
-# 1-Dispersion for frequency
-
-# 1) range for frequency
-f_range = f.max()-f.min()
-print(f_range)
-
-# 2) variance for frequency
-f_var = np.var(f_num)
-print(f_var)
-
-# 3) standard deviation for frequency
-f_std = np.std(f_num)
-print(f_std)
-
-# * * * * * * * * * * * * * * * * * * * * * * * #
-
-# 2-Dispersion for alpha
-
-# 1) range for alpha
-alpha_range = alpha.max()-alpha.min()
-print(alpha_range)
-
-# 2) variance for alpha
-alpha_var= np.var(alpha_num)
-print(alpha_var)
-
-# 3) standard deviation for alpha
-alpha_std = np.std(alpha_num)
-print(alpha_std)
-
-# * * * * * * * * * * * * * * * * * * * * * * * #
-
-# 3-Dispersion for c
-
-# 1) range for c
-c_range = c.max()-c.min()
-print(c_range)
-
-# 2) variance for c
-c_var = np.var(c_num)
-print(c_var)
-
-# 3) standard deviation for c
-c_std = np.std(c_num)
-print(c_std)
-
-# * * * * * * * * * * * * * * * * * * * * * * * #
-
-# 4-Dispersion for u_infinity
-
-# 1) range for u_infinity
-u_infinity_range = u_infinity.max()-u_infinity.min()
-print(u_infinity_range)
-
-# 2) variance for u_infinity
-u_infinity_var = np.var(u_infinity_num)
-print(u_infinity_var)
-
-# 3) standard deviation for u_infinity
-u_infinity_std = np.std(u_infinity_num)
-print(u_infinity_std)
-
-# * * * * * * * * * * * * * * * * * * * * * * * #
-
-# 5-Dispersion for delta
-
-# 1) range for delta
-delta_range = delta.max()-delta.min()
-print(delta_range)
-
-# 2) variance for delta
-delta_var = np.var(delta_num)
-print(delta_var)
-
-# 3) standard deviation for delta
-delta_std = np.std(delta_num)
-print(delta_std)
-
-# * * * * * * * * * * * * * * * * * * * * * * * #
-
-# 6-Dispersion for SSPL
-
-# 1) range for SSPL
-sspl_range = sspl.max()-sspl.min()
-print(sspl_range)
-
-# 2) variance for SSPL
-sspl_var = np.var(sspl_num)
-print(sspl_var)
-
-# 3) standard deviation for SSPL
-sspl_std = np.std(sspl_num)
-print(sspl_std)
-
-# * * * * * * * * * * * * * * * * * * * * * * * #
