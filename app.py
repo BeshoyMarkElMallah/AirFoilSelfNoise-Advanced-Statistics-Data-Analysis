@@ -51,25 +51,126 @@ sspl_mode = sspl.mode()
 '''
 4-1 Correlation Coefficient
 '''
+
 # correlation coeffiction between f, sspl
 corr_coefficient = f.corr(sspl)
-print("The Correlation Coefficient of the f and sspl are: ",corr_coefficient)
+print("The Correlation Coefficient of the f and sspl are: ",corr_coefficient)   
+
+# check the type of correlation between f, sspl
+if(corr_coefficient<=-0.01 and corr_coefficient>=-0.49):
+    print("Negative Weak")  
+elif(corr_coefficient<=-0.5 and corr_coefficient>=-0.69):
+    print("Negative Moderate")  
+elif(corr_coefficient<=-0.7 and corr_coefficient>=-0.99):
+    print("Negative Strong")     
+elif(corr_coefficient==-1):
+    print("Negative Perfect") 
+elif(corr_coefficient==0):
+    print("No Linear Correlation") 
+elif(corr_coefficient==1):
+    print("Positive Perfect") 
+elif(corr_coefficient>=0.01 and corr_coefficient<=0.49):
+    print("Positive Weak")  
+elif(corr_coefficient>=0.5 and corr_coefficient<=0.69):
+    print("Positive Moderate")  
+elif(corr_coefficient>=0.7 and corr_coefficient<=0.99):
+    print("Positive Strong")     
 
 # correlation coeffiction between alpha, sspl
 corr_coefficient= alpha.corr(sspl)
-print("The Correlation Coefficient of the alpha and sspl are: ",corr_coefficient)
+print("The Correlation Coefficient of the alpha and sspl are: ",corr_coefficient)      
+
+# check the type of correlation between alpha, sspl
+if(corr_coefficient<=-0.01 and corr_coefficient>=-0.49):
+    print("Negative Weak")  
+elif(corr_coefficient<=-0.5 and corr_coefficient>=-0.69):
+    print("Negative Moderate")  
+elif(corr_coefficient<=-0.7 and corr_coefficient>=-0.99):
+    print("Negative Strong")     
+elif(corr_coefficient==-1):
+    print("Negative Perfect") 
+elif(corr_coefficient==0):
+    print("No Linear Correlation") 
+elif(corr_coefficient==1):
+    print("Positive Perfect") 
+elif(corr_coefficient>=0.01 and corr_coefficient<=0.49):
+    print("Positive Weak")  
+elif(corr_coefficient>=0.5 and corr_coefficient<=0.69):
+    print("Positive Moderate")  
+elif(corr_coefficient>=0.7 and corr_coefficient<=0.99):
+    print("Positive Strong")  
 
 # correlation coeffiction between c, sspl
 corr_coefficient = c.corr(sspl)
 print("The Correlation Coefficient of the c and sspl are: ",corr_coefficient)
 
+# check the type of correlation between c, sspl
+if(corr_coefficient<=-0.01 and corr_coefficient>=-0.49):
+    print("Negative Weak")  
+elif(corr_coefficient<=-0.5 and corr_coefficient>=-0.69):
+    print("Negative Moderate")  
+elif(corr_coefficient<=-0.7 and corr_coefficient>=-0.99):
+    print("Negative Strong")     
+elif(corr_coefficient==-1):
+    print("Negative Perfect") 
+elif(corr_coefficient==0):
+    print("No Linear Correlation") 
+elif(corr_coefficient==1):
+    print("Positive Perfect") 
+elif(corr_coefficient>=0.01 and corr_coefficient<=0.49):
+    print("Positive Weak")  
+elif(corr_coefficient>=0.5 and corr_coefficient<=0.69):
+    print("Positive Moderate")  
+elif(corr_coefficient>=0.7 and corr_coefficient<=0.99):
+    print("Positive Strong")  
+          
 # correlation coeffiction between u_infinity, sspl
 corr_coefficient = u_infinity.corr(sspl)
-print("The Correlation Coefficient of the u_infinity and sspl are: ",corr_coefficient)
+print("The Correlation Coefficient of the u_infinity and sspl are: ",corr_coefficient)  
+
+# check the type of correlation between u_infinity, sspl
+if(corr_coefficient<=-0.01 and corr_coefficient>=-0.49):
+    print("Negative Weak")  
+elif(corr_coefficient<=-0.5 and corr_coefficient>=-0.69):
+    print("Negative Moderate")  
+elif(corr_coefficient<=-0.7 and corr_coefficient>=-0.99):
+    print("Negative Strong")     
+elif(corr_coefficient==-1):
+    print("Negative Perfect") 
+elif(corr_coefficient==0):
+    print("No Linear Correlation") 
+elif(corr_coefficient==1):
+    print("Positive Perfect") 
+elif(corr_coefficient>=0.01 and corr_coefficient<=0.49):
+    print("Positive Weak")  
+elif(corr_coefficient>=0.5 and corr_coefficient<=0.69):
+    print("Positive Moderate")  
+elif(corr_coefficient>=0.7 and corr_coefficient<=0.99):
+    print("Positive Strong")  
 
 # correlation coeffiction between delta, sspl
 corr_coefficient = delta.corr(sspl)
 print("The Correlation Coefficient of the delta and sspl are: ",corr_coefficient)
+     
+# check the type of correlation between delta, sspl
+if(corr_coefficient<=-0.01 and corr_coefficient>=-0.49):
+    print("Negative Weak")  
+elif(corr_coefficient<=-0.5 and corr_coefficient>=-0.69):
+    print("Negative Moderate")  
+elif(corr_coefficient<=-0.7 and corr_coefficient>=-0.99):
+    print("Negative Strong")     
+elif(corr_coefficient==-1):
+    print("Negative Perfect") 
+elif(corr_coefficient==0):
+    print("No Linear Correlation") 
+elif(corr_coefficient==1):
+    print("Positive Perfect") 
+elif(corr_coefficient>=0.01 and corr_coefficient<=0.49):
+    print("Positive Weak")  
+elif(corr_coefficient>=0.5 and corr_coefficient<=0.69):
+    print("Positive Moderate")  
+elif(corr_coefficient>=0.7 and corr_coefficient<=0.99):
+    print("Positive Strong")  
 
 '''
 End 4-1 Correlation Coefficient
