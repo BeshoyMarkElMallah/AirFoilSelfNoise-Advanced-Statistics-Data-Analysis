@@ -55,7 +55,9 @@ sspl_mode = sspl.mode()
 '''
 
 plt.title('Histogram For F ')
+
 plt.hist(f,bins=10)
+
 plt.show()
 
 plt.title('Histogram For alpha ')
