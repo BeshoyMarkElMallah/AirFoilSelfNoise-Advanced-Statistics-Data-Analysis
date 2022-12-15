@@ -442,7 +442,7 @@ elif(corr_coefficient>=0.7 and corr_coefficient<=0.99):
 
 
 '''
-4-2 Correlation Drawing & Linear Regression
+4-2 Correlation Drawing & Linear Regression Drawing
 '''
 
 ################### Drawing Correlation between f , sspl ###################
@@ -534,8 +534,75 @@ plt.plot(np.unique(delta), np.poly1d(np.polyfit(delta, sspl, 1))
 plt.xlabel('Suction side displacement thickness(delta)')
 plt.ylabel('Scaled Sound Pressure Level')
 
-plt.show()
+# plt.show()
 
 
 
 
+'''
+5- Linear Regression (Rx/y)
+'''
+
+# Regression for f & sspl
+n= np.size(f_num)
+sxy = np.sum(f_num*sspl_num)
+nXmYm= n*f_mean*sspl_mean
+sX2 = np.sum(f_num*f_num)
+sXm2= n-f_mean*f_mean
+
+b = (sxy-nXmYm)/(sX2-n*sXm2)
+a = sspl_mean-b*f_mean
+
+print(f"Regression for f & sspl\nX = {a} + {b} Y")
+
+
+# Regression for c & sspl
+n= np.size(c_num)
+sxy = np.sum(c_num*sspl_num)
+nXmYm= n*c_mean*sspl_mean
+sX2 = np.sum(c_num*c_num)
+sXm2= n-c_mean*c_mean
+
+b = (sxy-nXmYm)/(sX2-n*sXm2)
+a = sspl_mean-b*c_mean
+
+print(f"\n\nRegression for C & sspl\nX = {a} + {b} Y")
+
+
+# Regression for alpha & sspl
+n= np.size(alpha_num)
+sxy = np.sum(alpha_num*sspl_num)
+nXmYm= n*alpha_mean*sspl_mean
+sX2 = np.sum(alpha_num*alpha_num)
+sXm2= n-alpha_mean*alpha_mean
+
+b = (sxy-nXmYm)/(sX2-n*sXm2)
+a = sspl_mean-b*alpha_mean
+
+print(f"\n\nRegression for Alpha & sspl\nX = {a} + {b} Y")
+
+
+# Regression for delta & sspl
+n= np.size(delta_num)
+sxy = np.sum(delta_num*sspl_num)
+nXmYm= n*delta_mean*sspl_mean
+sX2 = np.sum(delta_num*delta_num)
+sXm2= n-delta_mean*delta_mean
+
+b = (sxy-nXmYm)/(sX2-n*sXm2)
+a = sspl_mean-b*delta_mean
+
+print(f"\n\nRegression for Delta & sspl\nX = {a} + {b} Y")
+
+
+# Regression for U_infinty & sspl
+n= np.size(u_infinity_num)
+sxy = np.sum(u_infinity_num*sspl_num)
+nXmYm= n*u_infinity_mean*sspl_mean
+sX2 = np.sum(u_infinity_num*u_infinity_num)
+sXm2= n-u_infinity_mean*u_infinity_mean
+
+b = (sxy-nXmYm)/(sX2-n*sXm2)
+a = sspl_mean-b*u_infinity_mean
+
+print(f"\n\nRegression for U_infinty & sspl\nX = {a} + {b} Y")
