@@ -1,7 +1,15 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-
+'''
+Presented By Team:
+1- Abdelazez Mohamed
+2- Beshoy Mark
+3- Fatma Tarek
+4- Hager Ashraf
+5- Nabil Mohamed
+6- Sohila Abdallah
+'''
 
 # Read Data from csv
 data = pd.read_csv("AirfoilSelfNoise.csv")
@@ -22,29 +30,6 @@ u_infinity_num = np.array(u_infinity)
 delta_num = np.array(delta)
 sspl_num = np.array(sspl)
 
-# Mean for All Data
-f_mean = f.mean()
-alpha_mean = alpha.mean()
-c_mean = c.mean()
-u_infinity_mean = u_infinity.mean()
-delta_mean = delta.mean()
-sspl_mean = sspl.mean()
-
-# Median for All Data
-f_median = f.median()
-alpha_median = alpha.median()
-c_median = c.median()
-u_infinity_median = u_infinity.median()
-delta_median = delta.median()
-sspl_median = sspl.median()
-
-# Mode for All Data
-f_mode = f.mode()
-alpha_mode = alpha.mode()
-c_mode = c.mode()
-u_infinity_mode = u_infinity.mode()
-delta_mode = delta.mode()
-sspl_mode = sspl.mode()
 
 
 
@@ -133,6 +118,62 @@ plt.boxplot(sspl, showmeans=True)
 plt.show()
 
 
+# Task 2 Central Tendency
+
+# Mean for All Data
+f_mean = f.mean()
+alpha_mean = alpha.mean()
+c_mean = c.mean()
+u_infinity_mean = u_infinity.mean()
+delta_mean = delta.mean()
+sspl_mean = sspl.mean()
+
+# Median for All Data
+f_median = f.median()
+alpha_median = alpha.median()
+c_median = c.median()
+u_infinity_median = u_infinity.median()
+delta_median = delta.median()
+sspl_median = sspl.median()
+
+# Mode for All Data
+f_mode = f.mode()
+alpha_mode = alpha.mode()
+c_mode = c.mode()
+u_infinity_mode = u_infinity.mode()
+delta_mode = delta.mode()
+sspl_mode = sspl.mode()
+
+
+def g_mean(x):
+    a = np.log(x)
+    return np.exp(a.mean())
+#Geometric mean for all data
+f_gmean = g_mean(f)
+alpha_gmean = g_mean(alpha)
+c_gmean = g_mean(c)
+u_infinity_gmean = g_mean(u_infinity)
+delta_gmean = g_mean(delta)
+sspl_gmean = g_mean(sspl)
+
+#harmonic mean
+f_hmean = 1 / f_mean
+alpha_hmean = 1 / alpha_mean
+c_hmean = 1 / c_mean
+u_infinity_hmean = 1 / u_infinity_mean
+delta_hmean = 1 / delta_mean
+sspl_hmean = 1 / sspl_mean
+
+print("Mean of f =",f_mean,"\n Mean of alpha = ",alpha_mean,"\n Mean of c = ",c_mean ,"\n Mean of u_infinity = ",u_infinity_mean,"\n Mean of Delta = ",delta_mean,"\n Mean of sspl = ",sspl_mean)
+print("\nMode of f = ",f_mode," \n Mode of alpha = ",alpha_mode,"\n Mode of c = ",c_mode, "\n Mode of u_infinity = ",u_infinity_mode, "\n Mode of Delta =" ,delta_mode, "\n Mode of sspl = " ,sspl_mode)
+print("\nMedian of f = ",f_median, "\n Median of alpha = ",alpha_median, "\n Median of c = ",c_median, "\n Median of u_infinity = ",u_infinity_median,"\n Median of Delta = ",delta_median, "\n Median of sspl = ",sspl_median)
+print("\nGeometric Mean of f =",f_gmean,"\n Geometric Mean of alpha = ",alpha_gmean,"\n Geometric Mean of c = ",c_gmean ,"\n Geometric Mean of u_infinity = ",u_infinity_gmean,"\n Geometric Mean of Delta = ",delta_gmean,"\n Geometric Mean of sspl = ",sspl_gmean)
+print("\nHarmonic Mean of f =",f_hmean,"\n Harmonic Mean of alpha = ",alpha_hmean,"\n Harmonic Mean of c = ",c_hmean ,"\n Harmonic Mean of u_infinity = ",u_infinity_hmean,"\n Harmonic Mean of Delta = ",delta_hmean,"\n Harmonic Mean of sspl = ",sspl_hmean)
+
+
+
+
+
 # Task 3 Dispersion 
 
 def QuartileDeviation(qf3, qf1): #quartile deviation
@@ -150,7 +191,15 @@ print("the variance of frequency is +",f_var)
 
 # 3) standard deviation for frequency
 f_std = np.std(f_num)
-print(f_std)
+print("the standard deviation of frequency is =",f_std)
+
+# 4) Quartile Deviation
+Qf1 = np.quantile(f_num, 0.25) #Q1
+Qf3 = np.quantile(f_num, 0.75) #Q3
+
+
+print("the quartile deviation of  is =",QuartileDeviation(Qf3, Qf1))
+
 
 # * * * * * * * * * * * * * * * * * * * * * * * #
 
@@ -166,7 +215,14 @@ print("the variance of alpha is =",alpha_var)
 
 # 3) standard deviation for alpha
 alpha_std = np.std(alpha_num)
-print(alpha_std)
+print("the standard deviation of slpha is =",alpha_std)
+
+# 4) Quartile deviation for alpha
+Qa1 = np.quantile(alpha_num, 0.25) #Q1
+Qa3 = np.quantile(alpha_num, 0.75) #Q3
+
+
+print("the quartile deviation of alpha is =",QuartileDeviation(Qa3, Qa1))
 
 # * * * * * * * * * * * * * * * * * * * * * * * #
 
@@ -174,15 +230,23 @@ print(alpha_std)
 
 # 1) range for c
 c_range = c.max()-c.min()
-print(c_range)
+print("the range of c is = ",c_range)
 
 # 2) variance for c
 c_var = np.var(c_num)
-print(c_var)
+print("the variance of c is = ",c_var)
 
 # 3) standard deviation for c
 c_std = np.std(c_num)
-print(c_std)
+print("the standard deviation is = ",c_std)
+
+# 4) Quartile deviation for c
+Qc1 = np.quantile(c_num, 0.25) #Q1
+Qc3 = np.quantile(c_num, 0.75) #Q3
+
+
+print("the quartile deviation of c is = ",QuartileDeviation(Qc3, Qc1))
+
 
 # * * * * * * * * * * * * * * * * * * * * * * * #
 
@@ -190,15 +254,21 @@ print(c_std)
 
 # 1) range for u_infinity
 u_infinity_range = u_infinity.max()-u_infinity.min()
-print(u_infinity_range)
+print("the range of u_infinity is = ",u_infinity_range)
 
 # 2) variance for u_infinity
 u_infinity_var = np.var(u_infinity_num)
-print(u_infinity_var)
+print("the variance of u_infinity is = ",u_infinity_var)
 
 # 3) standard deviation for u_infinity
 u_infinity_std = np.std(u_infinity_num)
-print(u_infinity_std)
+print("the standard deviation of u_infinity is = ",u_infinity_std)
+
+# 4) Quartile deviation for u_infinity
+Qu1 = np.quantile(u_infinity_num, 0.25) #Q1
+Qu3 = np.quantile(u_infinity_num, 0.75) #Q3
+
+print("the quartile deviation of u_infinity is = ",QuartileDeviation(Qu3, Qu1))
 
 # * * * * * * * * * * * * * * * * * * * * * * * #
 
@@ -206,32 +276,44 @@ print(u_infinity_std)
 
 # 1) range for delta
 delta_range = delta.max()-delta.min()
-print(delta_range)
+print("the range of delta is = ",delta_range)
 
 # 2) variance for delta
 delta_var = np.var(delta_num)
-print(delta_var)
+print("the variance of delta is = ",delta_var)
 
 # 3) standard deviation for delta
 delta_std = np.std(delta_num)
-print(delta_std)
+print("the standard deviation of delta is = ",delta_std)
 
+# 4) Quartile deviation for delta
+Qd1 = np.quantile(delta_num, 0.25) #Q1
+Qd3 = np.quantile(delta_num, 0.75) #Q3
+
+
+print("the quartile deviation of delta is = ",QuartileDeviation(Qd3, Qd1))
 # * * * * * * * * * * * * * * * * * * * * * * * #
 
 # 6-Dispersion for SSPL
 
 # 1) range for SSPL
 sspl_range = sspl.max()-sspl.min()
-print(sspl_range)
+print("the range of sspl is = ",sspl_range)
 
 # 2) variance for SSPL
 sspl_var = np.var(sspl_num)
-print(sspl_var)
+print("the variance of sspl is = ",sspl_var)
 
 # 3) standard deviation for SSPL
 sspl_std = np.std(sspl_num)
-print(sspl_std)
+print("the standard deviation of sspl is = ",sspl_std)
 
+# 4) Quartile deviation for sspl
+Qs1 = np.quantile(sspl_num, 0.25) #Q1
+Qs3 = np.quantile(sspl_num, 0.75) #Q3
+
+
+print("the quartile deviation of sspl is = ",QuartileDeviation(Qs3, Qs1))
 # * * * * * * * * * * * * * * * * * * * * * * * #
 
 '''
@@ -239,33 +321,131 @@ print(sspl_std)
 '''
 # correlation coeffiction between f, sspl
 corr_coefficient = f.corr(sspl)
-print("The Correlation Coefficient of the f and sspl are: ",corr_coefficient)
+print("\nThe Correlation Coefficient of the f and sspl are: ",corr_coefficient)
+
+# check the type of correlation between f, sspl
+if(corr_coefficient<=-0.01 and corr_coefficient>=-0.49):
+    print("Negative Weak")  
+elif(corr_coefficient<=-0.5 and corr_coefficient>=-0.69):
+    print("Negative Moderate")  
+elif(corr_coefficient<=-0.7 and corr_coefficient>=-0.99):
+    print("Negative Strong")     
+elif(corr_coefficient==-1):
+    print("Negative Perfect") 
+elif(corr_coefficient==0):
+    print("No Linear Correlation") 
+elif(corr_coefficient==1):
+    print("Positive Perfect") 
+elif(corr_coefficient>=0.01 and corr_coefficient<=0.49):
+    print("Positive Weak")  
+elif(corr_coefficient>=0.5 and corr_coefficient<=0.69):
+    print("Positive Moderate")  
+elif(corr_coefficient>=0.7 and corr_coefficient<=0.99):
+    print("Positive Strong")
 
 # correlation coeffiction between alpha, sspl
 corr_coefficient= alpha.corr(sspl)
-print("The Correlation Coefficient of the alpha and sspl are: ",corr_coefficient)
+print("\nThe Correlation Coefficient of the alpha and sspl are: ",corr_coefficient)
+
+# check the type of correlation between f, sspl
+if(corr_coefficient<=-0.01 and corr_coefficient>=-0.49):
+    print("Negative Weak")  
+elif(corr_coefficient<=-0.5 and corr_coefficient>=-0.69):
+    print("Negative Moderate")  
+elif(corr_coefficient<=-0.7 and corr_coefficient>=-0.99):
+    print("Negative Strong")     
+elif(corr_coefficient==-1):
+    print("Negative Perfect") 
+elif(corr_coefficient==0):
+    print("No Linear Correlation") 
+elif(corr_coefficient==1):
+    print("Positive Perfect") 
+elif(corr_coefficient>=0.01 and corr_coefficient<=0.49):
+    print("Positive Weak")  
+elif(corr_coefficient>=0.5 and corr_coefficient<=0.69):
+    print("Positive Moderate")  
+elif(corr_coefficient>=0.7 and corr_coefficient<=0.99):
+    print("Positive Strong")
 
 # correlation coeffiction between c, sspl
 corr_coefficient = c.corr(sspl)
-print("The Correlation Coefficient of the c and sspl are: ",corr_coefficient)
+print("\nThe Correlation Coefficient of the c and sspl are: ",corr_coefficient)
+
+# check the type of correlation between f, sspl
+if(corr_coefficient<=-0.01 and corr_coefficient>=-0.49):
+    print("Negative Weak")  
+elif(corr_coefficient<=-0.5 and corr_coefficient>=-0.69):
+    print("Negative Moderate")  
+elif(corr_coefficient<=-0.7 and corr_coefficient>=-0.99):
+    print("Negative Strong")     
+elif(corr_coefficient==-1):
+    print("Negative Perfect") 
+elif(corr_coefficient==0):
+    print("No Linear Correlation") 
+elif(corr_coefficient==1):
+    print("Positive Perfect") 
+elif(corr_coefficient>=0.01 and corr_coefficient<=0.49):
+    print("Positive Weak")  
+elif(corr_coefficient>=0.5 and corr_coefficient<=0.69):
+    print("Positive Moderate")  
+elif(corr_coefficient>=0.7 and corr_coefficient<=0.99):
+    print("Positive Strong")
 
 # correlation coeffiction between u_infinity, sspl
 corr_coefficient = u_infinity.corr(sspl)
-print("The Correlation Coefficient of the u_infinity and sspl are: ",corr_coefficient)
+print("\nThe Correlation Coefficient of the u_infinity and sspl are: ",corr_coefficient)
+
+# check the type of correlation between f, sspl
+if(corr_coefficient<=-0.01 and corr_coefficient>=-0.49):
+    print("Negative Weak")  
+elif(corr_coefficient<=-0.5 and corr_coefficient>=-0.69):
+    print("Negative Moderate")  
+elif(corr_coefficient<=-0.7 and corr_coefficient>=-0.99):
+    print("Negative Strong")     
+elif(corr_coefficient==-1):
+    print("Negative Perfect") 
+elif(corr_coefficient==0):
+    print("No Linear Correlation") 
+elif(corr_coefficient==1):
+    print("Positive Perfect") 
+elif(corr_coefficient>=0.01 and corr_coefficient<=0.49):
+    print("Positive Weak")  
+elif(corr_coefficient>=0.5 and corr_coefficient<=0.69):
+    print("Positive Moderate")  
+elif(corr_coefficient>=0.7 and corr_coefficient<=0.99):
+    print("Positive Strong")
 
 # correlation coeffiction between delta, sspl
 corr_coefficient = delta.corr(sspl)
-print("The Correlation Coefficient of the delta and sspl are: ",corr_coefficient)
+print("\nThe Correlation Coefficient of the delta and sspl are: ",corr_coefficient)
+
+# check the type of correlation between f, sspl
+if(corr_coefficient<=-0.01 and corr_coefficient>=-0.49):
+    print("Negative Weak")  
+elif(corr_coefficient<=-0.5 and corr_coefficient>=-0.69):
+    print("Negative Moderate")  
+elif(corr_coefficient<=-0.7 and corr_coefficient>=-0.99):
+    print("Negative Strong")     
+elif(corr_coefficient==-1):
+    print("Negative Perfect") 
+elif(corr_coefficient==0):
+    print("No Linear Correlation") 
+elif(corr_coefficient==1):
+    print("Positive Perfect") 
+elif(corr_coefficient>=0.01 and corr_coefficient<=0.49):
+    print("Positive Weak")  
+elif(corr_coefficient>=0.5 and corr_coefficient<=0.69):
+    print("Positive Moderate")  
+elif(corr_coefficient>=0.7 and corr_coefficient<=0.99):
+    print("Positive Strong")
+
+
 
 '''
-End 4-1 Correlation Coefficient
+4-2 Correlation Drawing & Linear Regression
 '''
 
-'''
-4-2 Correlation Coefficient
-'''
-
-###################Drawing Correlation between f , sspl###################
+################### Drawing Correlation between f , sspl ###################
 
 # adds the title
 plt.title('Correlation between f & sspl')
@@ -284,7 +464,7 @@ plt.ylabel('Scaled Sound Pressure Level')
 
 plt.show()
 
-###################Drawing Correlation between alpha , sspl###################
+################### Drawing Correlation between alpha , sspl ###################
 
 # adds the title
 plt.title('Correlation between alpha & sspl')
@@ -302,7 +482,7 @@ plt.ylabel('Scaled Sound Pressure Level')
 
 plt.show()
 
-###################Drawing Correlation between c , sspl###################
+################### Drawing Correlation between c , sspl ###################
 
 # adds the title
 plt.title('Correlation between c & sspl')
@@ -320,7 +500,7 @@ plt.ylabel('Scaled Sound Pressure Level')
 
 plt.show()
 
-###################Drawing Correlation between u_infinity , sspl###################
+################### Drawing Correlation between u_infinity , sspl ###################
 
 # adds the title
 plt.title('Correlation between u_infinity  & sspl')
@@ -338,7 +518,7 @@ plt.ylabel('Scaled Sound Pressure Level')
 
 plt.show()
 
-###################Drawing Correlation between delta , sspl###################
+################### Drawing Correlation between delta , sspl ###################
 
 # adds the title
 plt.title('Correlation between delta  & sspl')
@@ -356,8 +536,6 @@ plt.ylabel('Scaled Sound Pressure Level')
 
 plt.show()
 
-'''
-End 4-2 Correlation Coefficient
-'''
+
 
 
