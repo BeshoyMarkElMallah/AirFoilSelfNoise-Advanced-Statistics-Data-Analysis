@@ -8,3 +8,11 @@
 ## 6- Draw Linear Regression 
 
 
+
+# Presented By:
+1- Abdelazez Mohamed <br>
+2- Beshoy Mark <br>
+3- Fatma Tarek <br>
+4- Hager Ashraf <br>
+5- Nabil Mohamed <br>
+6- Sohila Abdallah <br>
