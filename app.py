@@ -547,10 +547,10 @@ plt.show()
 n= np.size(f_num)
 sxy = np.sum(f_num*sspl_num)
 nXmYm= n*f_mean*sspl_mean
-sX2 = np.sum(f_num*f_num)
-sXm2= n-f_mean*f_mean
+sY2 = np.sum(sspl_num*sspl_num)
+Ym2= sspl_mean*sspl_mean
 
-b = (sxy-nXmYm)/(sX2-n*sXm2)
+b = (sxy-nXmYm)/(sY2-n*Ym2)
 a = f_mean -b*sspl_mean
 
 print(f"Regression for f & sspl\nX = {a} + {b} Y")
@@ -560,10 +560,10 @@ print(f"Regression for f & sspl\nX = {a} + {b} Y")
 n= np.size(c_num)
 sxy = np.sum(c_num*sspl_num)
 nXmYm= n*c_mean*sspl_mean
-sX2 = np.sum(c_num*c_num)
-sXm2= n-c_mean*c_mean
+sY2 = np.sum(sspl_num*sspl_num)
+Ym2= sspl_mean*sspl_mean
 
-b = (sxy-nXmYm)/(sX2-n*sXm2)
+b = (sxy-nXmYm)/(sY2-n*Ym2)
 a = c_mean -b*sspl_mean
 
 print(f"\n\nRegression for C & sspl\nX = {a} + {b} Y")
@@ -573,10 +573,10 @@ print(f"\n\nRegression for C & sspl\nX = {a} + {b} Y")
 n= np.size(alpha_num)
 sxy = np.sum(alpha_num*sspl_num)
 nXmYm= n*alpha_mean*sspl_mean
-sX2 = np.sum(alpha_num*alpha_num)
-sXm2= n-alpha_mean*alpha_mean
+sY2 = np.sum(sspl_num*sspl_num)
+Ym2= sspl_mean*sspl_mean
 
-b = (sxy-nXmYm)/(sX2-n*sXm2)
+b = (sxy-nXmYm)/(sY2-n*Ym2)
 a = alpha_mean -b*sspl_mean
 
 print(f"\n\nRegression for Alpha & sspl\nX = {a} + {b} Y")
@@ -586,10 +586,10 @@ print(f"\n\nRegression for Alpha & sspl\nX = {a} + {b} Y")
 n= np.size(delta_num)
 sxy = np.sum(delta_num*sspl_num)
 nXmYm= n*delta_mean*sspl_mean
-sX2 = np.sum(delta_num*delta_num)
-sXm2= n-delta_mean*delta_mean
+sY2 = np.sum(sspl_num*sspl_num)
+Ym2= sspl_mean*sspl_mean
 
-b = (sxy-nXmYm)/(sX2-n*sXm2)
+b = (sxy-nXmYm)/(sY2-n*Ym2)
 a = delta_mean -b*sspl_mean
 
 print(f"\n\nRegression for Delta & sspl\nX = {a} + {b} Y")
@@ -599,10 +599,10 @@ print(f"\n\nRegression for Delta & sspl\nX = {a} + {b} Y")
 n= np.size(u_infinity_num)
 sxy = np.sum(u_infinity_num*sspl_num)
 nXmYm= n*u_infinity_mean*sspl_mean
-sX2 = np.sum(u_infinity_num*u_infinity_num)
-sXm2= n-u_infinity_mean*u_infinity_mean
+sY2 = np.sum(sspl_num*sspl_num)
+Ym2= sspl_mean*sspl_mean
 
-b = (sxy-nXmYm)/(sX2-n*sXm2)
+b = (sxy-nXmYm)/(sY2-n*Ym2)
 a = u_infinity_mean -b*sspl_mean
 
 print(f"\n\nRegression for U_infinty & sspl\nX = {a} + {b} Y")
