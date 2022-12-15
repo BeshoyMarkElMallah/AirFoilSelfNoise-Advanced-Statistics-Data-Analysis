@@ -551,7 +551,7 @@ sX2 = np.sum(f_num*f_num)
 sXm2= n-f_mean*f_mean
 
 b = (sxy-nXmYm)/(sX2-n*sXm2)
-a = sspl_mean-b*f_mean
+a = f_mean -b*sspl_mean
 
 print(f"Regression for f & sspl\nX = {a} + {b} Y")
 
@@ -564,7 +564,7 @@ sX2 = np.sum(c_num*c_num)
 sXm2= n-c_mean*c_mean
 
 b = (sxy-nXmYm)/(sX2-n*sXm2)
-a = sspl_mean-b*c_mean
+a = c_mean -b*sspl_mean
 
 print(f"\n\nRegression for C & sspl\nX = {a} + {b} Y")
 
@@ -577,7 +577,7 @@ sX2 = np.sum(alpha_num*alpha_num)
 sXm2= n-alpha_mean*alpha_mean
 
 b = (sxy-nXmYm)/(sX2-n*sXm2)
-a = sspl_mean-b*alpha_mean
+a = alpha_mean -b*sspl_mean
 
 print(f"\n\nRegression for Alpha & sspl\nX = {a} + {b} Y")
 
@@ -590,7 +590,7 @@ sX2 = np.sum(delta_num*delta_num)
 sXm2= n-delta_mean*delta_mean
 
 b = (sxy-nXmYm)/(sX2-n*sXm2)
-a = sspl_mean-b*delta_mean
+a = delta_mean -b*sspl_mean
 
 print(f"\n\nRegression for Delta & sspl\nX = {a} + {b} Y")
 
@@ -603,6 +603,6 @@ sX2 = np.sum(u_infinity_num*u_infinity_num)
 sXm2= n-u_infinity_mean*u_infinity_mean
 
 b = (sxy-nXmYm)/(sX2-n*sXm2)
-a = sspl_mean-b*u_infinity_mean
+a = u_infinity_mean -b*sspl_mean
 
 print(f"\n\nRegression for U_infinty & sspl\nX = {a} + {b} Y")
