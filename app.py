@@ -534,7 +534,7 @@ plt.plot(np.unique(delta), np.poly1d(np.polyfit(delta, sspl, 1))
 plt.xlabel('Suction side displacement thickness(delta)')
 plt.ylabel('Scaled Sound Pressure Level')
 
-# plt.show()
+plt.show()
 
 
 
