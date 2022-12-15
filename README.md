@@ -4,7 +4,7 @@
 ## 2- Calculate Central Tendency
 ## 3- Calculate the Dispersion
 ## 4- Calculate the Correlation Coefficient
-## 5- Drawe the Correlation Between each Variable with the target Variable
+## 5- Draw the Correlation Between each Variable with the target Variable
 ## 6- Draw Linear Regression 
 
 
