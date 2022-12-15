@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import math
 '''
 Presented By Team:
 1- Abdelazez Mohamed
@@ -441,107 +442,15 @@ elif(corr_coefficient>=0.7 and corr_coefficient<=0.99):
 
 
 
+
+
+
+
 '''
-4-2 Correlation Drawing & Linear Regression Drawing
+4 Correlation Drawing & Linear Regression Drawing
 '''
 
 ################### Drawing Correlation between f , sspl ###################
-
-# adds the title
-plt.title('Correlation between f & sspl')
-
-
-#plotting the data
-plt.scatter(f, sspl)
- 
-# This will fit the best line into the graph (linear regression)
-plt.plot(np.unique(f), np.poly1d(np.polyfit(f, sspl, 1))
-         (np.unique(f)), color='red')
- 
-# Labelling axes
-plt.xlabel('Frequency')
-plt.ylabel('Scaled Sound Pressure Level')
-
-plt.show()
-
-################### Drawing Correlation between alpha , sspl ###################
-
-# adds the title
-plt.title('Correlation between alpha & sspl')
-
-#plotting the data
-plt.scatter(alpha, sspl)
- 
-# This will fit the best line into the graph (linear regression)
-plt.plot(np.unique(alpha), np.poly1d(np.polyfit( alpha, sspl, 1))
-         (np.unique(alpha)), color='green')
-
-# Labelling axes
-plt.xlabel('Angle of attack(alpha)')
-plt.ylabel('Scaled Sound Pressure Level')
-
-plt.show()
-
-################### Drawing Correlation between c , sspl ###################
-
-# adds the title
-plt.title('Correlation between c & sspl')
-
-#plotting the dat
-plt.scatter(c, sspl)
- 
-# This will fit the best line into the graph (linear regression)
-plt.plot(np.unique(c), np.poly1d(np.polyfit(c, sspl, 1))
-         (np.unique(c)), color='gray')
-
-# Labelling axes
-plt.xlabel('Chord length(c)')
-plt.ylabel('Scaled Sound Pressure Level')
-
-plt.show()
-
-################### Drawing Correlation between u_infinity , sspl ###################
-
-# adds the title
-plt.title('Correlation between u_infinity  & sspl')
-
-#plotting the data
-plt.scatter(u_infinity, sspl)
- 
-# This will fit the best line into the graph  (linear regression)
-plt.plot(np.unique(u_infinity), np.poly1d(np.polyfit(u_infinity, sspl, 1))
-         (np.unique(u_infinity)), color='orange')
-
-# Labelling axes
-plt.xlabel('Free-stream velocity( u_infinity)')
-plt.ylabel('Scaled Sound Pressure Level')
-
-plt.show()
-
-################### Drawing Correlation between delta , sspl ###################
-
-# adds the title
-plt.title('Correlation between delta  & sspl')
-
-#plotting the data
-plt.scatter(delta, sspl)
- 
-# This will fit the best line into the graph (linear regression)
-plt.plot(np.unique(delta), np.poly1d(np.polyfit(delta, sspl, 1))
-         (np.unique(delta)), color='yellow')
-
-# Labelling axes
-plt.xlabel('Suction side displacement thickness(delta)')
-plt.ylabel('Scaled Sound Pressure Level')
-
-plt.show()
-
-
-
-
-'''
-5- Linear Regression (Rx/y)
-'''
 
 # Regression for f & sspl
 n= np.size(f_num)
@@ -552,9 +461,69 @@ Ym2= sspl_mean*sspl_mean
 
 b = (sxy-nXmYm)/(sY2-n*Ym2)
 a = f_mean -b*sspl_mean
+x= a+b*sspl
+
+up = math.pow(np.sum(f_num-x),2)
+down = n-1
+ste = math.sqrt(up/down)
+print(f"Standard Error f {ste}" )
 
 print(f"Regression for f & sspl\nX = {a} + {b} Y")
 
+# adds the title
+plt.title('Correlation between f & sspl')
+
+
+#plotting the data
+plt.scatter(f, sspl)
+ 
+# This will fit the best line into the graph (linear regression)
+plt.plot(np.unique(x), np.poly1d(np.polyfit(x, sspl, 1))
+         (np.unique(x)), color='red')
+ 
+# Labelling axes
+plt.xlabel('Frequency')
+plt.ylabel('Scaled Sound Pressure Level')
+
+plt.show()
+
+################### Drawing Correlation between alpha , sspl ###################
+
+# Regression for alpha & sspl
+n= np.size(alpha_num)
+sxy = np.sum(alpha_num*sspl_num)
+nXmYm= n*alpha_mean*sspl_mean
+sY2 = np.sum(sspl_num*sspl_num)
+Ym2= sspl_mean*sspl_mean
+
+b = (sxy-nXmYm)/(sY2-n*Ym2)
+a = alpha_mean -b*sspl_mean
+x= a+b*sspl
+
+up = math.pow(np.sum(alpha_num-x),2)
+down = n-1
+ste = math.sqrt(up/down)
+print(f"Standard Error alpha {ste}" )
+
+print(f"\n\nRegression for Alpha & sspl\nX = {a} + {b} Y")
+
+# adds the title
+plt.title('Correlation between alpha & sspl')
+
+#plotting the data
+plt.scatter(alpha, sspl)
+ 
+# This will fit the best line into the graph (linear regression)
+plt.plot(np.unique(x), np.poly1d(np.polyfit( x, sspl, 1))
+         (np.unique(x)), color='green')
+
+# Labelling axes
+plt.xlabel('Angle of attack(alpha)')
+plt.ylabel('Scaled Sound Pressure Level')
+
+plt.show()
+
+################### Drawing Correlation between c , sspl ###################
 
 # Regression for c & sspl
 n= np.size(c_num)
@@ -566,34 +535,32 @@ Ym2= sspl_mean*sspl_mean
 b = (sxy-nXmYm)/(sY2-n*Ym2)
 a = c_mean -b*sspl_mean
 
+x= a+b*sspl
+
+up = math.pow(np.sum(c_num-x),2)
+down = n-1
+ste = math.sqrt(up/down)
+print(f"Standard Error c {ste}" )
+
 print(f"\n\nRegression for C & sspl\nX = {a} + {b} Y")
 
+# adds the title
+plt.title('Correlation between c & sspl')
 
-# Regression for alpha & sspl
-n= np.size(alpha_num)
-sxy = np.sum(alpha_num*sspl_num)
-nXmYm= n*alpha_mean*sspl_mean
-sY2 = np.sum(sspl_num*sspl_num)
-Ym2= sspl_mean*sspl_mean
+#plotting the dat
+plt.scatter(c, sspl)
+ 
+# This will fit the best line into the graph (linear regression)
+plt.plot(np.unique(x), np.poly1d(np.polyfit(x, sspl, 1))
+         (np.unique(x)), color='gray')
 
-b = (sxy-nXmYm)/(sY2-n*Ym2)
-a = alpha_mean -b*sspl_mean
+# Labelling axes
+plt.xlabel('Chord length(c)')
+plt.ylabel('Scaled Sound Pressure Level')
 
-print(f"\n\nRegression for Alpha & sspl\nX = {a} + {b} Y")
+plt.show()
 
-
-# Regression for delta & sspl
-n= np.size(delta_num)
-sxy = np.sum(delta_num*sspl_num)
-nXmYm= n*delta_mean*sspl_mean
-sY2 = np.sum(sspl_num*sspl_num)
-Ym2= sspl_mean*sspl_mean
-
-b = (sxy-nXmYm)/(sY2-n*Ym2)
-a = delta_mean -b*sspl_mean
-
-print(f"\n\nRegression for Delta & sspl\nX = {a} + {b} Y")
-
+################### Drawing Correlation between u_infinity , sspl ###################
 
 # Regression for U_infinty & sspl
 n= np.size(u_infinity_num)
@@ -605,4 +572,63 @@ Ym2= sspl_mean*sspl_mean
 b = (sxy-nXmYm)/(sY2-n*Ym2)
 a = u_infinity_mean -b*sspl_mean
 
+x= a+b*sspl
+
+up = math.pow(np.sum(u_infinity_num-x),2)
+down = n-1
+ste = math.sqrt(up/down)
+print(f"Standard Error u_infinity {ste}" )
+
 print(f"\n\nRegression for U_infinty & sspl\nX = {a} + {b} Y")
+# adds the title
+plt.title('Correlation between u_infinity  & sspl')
+
+#plotting the data
+plt.scatter(u_infinity, sspl)
+ 
+# This will fit the best line into the graph  (linear regression)
+plt.plot(np.unique(x), np.poly1d(np.polyfit(x, sspl, 1))
+         (np.unique(x)), color='orange')
+# plt.plot(x,sspl,color="orange")
+
+# Labelling axes
+plt.xlabel('Free-stream velocity( u_infinity)')
+plt.ylabel('Scaled Sound Pressure Level')
+
+plt.show()
+
+################### Drawing Correlation between delta , sspl ###################
+
+# Regression for delta & sspl
+n= np.size(delta_num)
+sxy = np.sum(delta_num*sspl_num)
+nXmYm= n*delta_mean*sspl_mean
+sY2 = np.sum(sspl_num*sspl_num)
+Ym2= sspl_mean*sspl_mean
+
+b = (sxy-nXmYm)/(sY2-n*Ym2)
+a = delta_mean -b*sspl_mean
+x= a+b*sspl
+
+up = math.pow(np.sum(delta_num-x),2)
+down = n-1
+ste = math.sqrt(up/down)
+print(f"Standard Error delta {ste}" )
+
+print(f"\n\nRegression for Delta & sspl\nX = {a} + {b} Y")
+
+# adds the title
+plt.title('Correlation between delta  & sspl')
+
+#plotting the data
+plt.scatter(delta, sspl)
+ 
+# This will fit the best line into the graph (linear regression)
+plt.plot(np.unique(x), np.poly1d(np.polyfit(x, sspl, 1))
+         (np.unique(x)), color='yellow')
+
+# Labelling axes
+plt.xlabel('Suction side displacement thickness(delta)')
+plt.ylabel('Scaled Sound Pressure Level')
+
+plt.show()
