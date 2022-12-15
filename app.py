@@ -1,7 +1,15 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-
+'''
+Presented By Team:
+1- Abdelazez Mohamed
+2- Beshoy Mark
+3- Fatma Tarek
+4- Hager Ashraf
+5- Nabil Mohamed
+6- Sohila Abdallah
+'''
 
 # Read Data from csv
 data = pd.read_csv("AirfoilSelfNoise.csv")
